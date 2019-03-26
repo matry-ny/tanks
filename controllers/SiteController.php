@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\assets\TanksAsset;
 use app\components\Map;
 use app\components\map\items\Border;
 use app\components\map\items\Road;
@@ -48,6 +49,7 @@ class SiteController extends Controller
             ->setItem(4, 3, (new Border()))
             ->setItem(4, 4, (new Border()));
 
-        return $map->draw();
+        $this->getView()->registerAssetBundle(TanksAsset::class);
+        return $this->render('game', ['map' => $map]);
     }
 }

@@ -33,19 +33,16 @@ class Map
      */
     public function draw(): string
     {
-        $mapHTML = '';
+        $mapHTML = Html::beginTag('div', ['class' => 'map-container']);
         foreach ($this->config as $row) {
             $mapHTML .= Html::beginTag('div', ['class' => 'map-row']);
             foreach ($row as $column) {
                 /** @var MapItemInterface $column */
-                $mapHTML .= Html::tag(
-                    'div',
-                    $column->draw(),
-                    ['class' => 'map-column']
-                );
+                $mapHTML .= $column->draw();
             }
             $mapHTML .= Html::endTag('div');
         }
+        $mapHTML .= Html::endTag('div');
 
         return $mapHTML;
     }

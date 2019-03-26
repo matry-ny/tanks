@@ -2,6 +2,7 @@
 
 namespace app\components\map\items;
 
+use yii\helpers\Html;
 use app\components\map\MapItemInterface;
 
 /**
@@ -15,6 +16,8 @@ class WoodBlock implements MapItemInterface
      */
     public function draw(): string
     {
-        return __CLASS__;
+        return Html::tag('div', '', [
+            'class' => 'map-column map-wood-block'
+        ]);
     }
 }

@@ -3,6 +3,7 @@
 namespace app\components\map\items;
 
 use app\components\map\MapItemInterface;
+use yii\helpers\Html;
 
 /**
  * Class Border
@@ -15,6 +16,6 @@ class Border implements MapItemInterface
      */
     public function draw(): string
     {
-        return __CLASS__;
+        return Html::tag('div', '', ['class' => 'map-column map-border']);
     }
 }

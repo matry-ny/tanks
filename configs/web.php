@@ -3,6 +3,9 @@
 $config = [
     'id' => 'tanks-web',
     'components' => [
+        'request' => [
+            'cookieValidationKey' => 'kw11HC14ar0Cz9A4Jl9jmNNZd6rxmdBx'
+        ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
