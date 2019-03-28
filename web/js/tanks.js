@@ -27,8 +27,26 @@
         }
     };
 
+    let body = $('body');
+    let map = body.find('.map-container');
+    let tank = map.find('.tank');
+
     $(socket).on('socketInit', function (event, connection) {
-        console.log('Connected');
+        body.on('keydown', (e) => {
+            if (!e.key.indexOf('Arrow')) {
+                let direction = e.key.replace("Arrow", '').toLowerCase();
+                tank
+                    .removeClass('up left right down')
+                    .addClass(direction);
+
+                connection.publish('move', {
+                    position: tank.parent().data(),
+                    direction: direction
+                });
+            }
+        });
+
+
         // connection.subscribe('message', function (topic, data) {
         //     $('#chat-messages').append($('li').text(data));
         // });

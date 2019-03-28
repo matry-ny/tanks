@@ -95,7 +95,8 @@ class EventPusher implements WampServerInterface
      */
     function onPublish(ConnectionInterface $conn, $topic, $event, array $exclude, array $eligible)
     {
-        $topic->broadcast($event, $exclude, $eligible);
+        print_r($event);
+//        $topic->broadcast($event, $exclude, $eligible);
     }
 
     function onPushEventData($event)

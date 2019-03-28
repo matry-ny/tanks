@@ -29,13 +29,16 @@ abstract class AbstractMapItem implements MapItemInterface
     }
 
     /**
+     * @param int $rowIndex
+     * @param int $columnIndex
      * @return string
      */
-    public function draw(): string
+    public function draw(int $rowIndex, int $columnIndex): string
     {
         $payloadHTML = $this->payload ? $this->payload->draw() : '';
         return Html::tag('div', $payloadHTML, [
-            'class' => "map-item {$this->htmlClass}"
+            'class' => "map-item {$this->htmlClass}",
+            'data' => ['x' => $rowIndex, 'y' => $columnIndex]
         ]);
     }
 }

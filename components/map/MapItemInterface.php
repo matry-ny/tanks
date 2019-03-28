@@ -8,5 +8,10 @@ namespace app\components\map;
  */
 interface MapItemInterface
 {
-    public function draw(): string;
+    /**
+     * @param int $rowIndex
+     * @param int $columnIndex
+     * @return string
+     */
+    public function draw(int $rowIndex, int $columnIndex): string;
 }

@@ -34,11 +34,11 @@ class Map
     public function draw(): string
     {
         $mapHTML = Html::beginTag('div', ['class' => 'map-container']);
-        foreach ($this->config as $row) {
+        foreach ($this->config as $rowIndex => $row) {
             $mapHTML .= Html::beginTag('div', ['class' => 'map-row']);
-            foreach ($row as $column) {
+            foreach ($row as $columnIndex => $column) {
                 /** @var MapItemInterface $column */
-                $mapHTML .= $column->draw();
+                $mapHTML .= $column->draw($rowIndex, $columnIndex);
             }
             $mapHTML .= Html::endTag('div');
         }
