@@ -2,20 +2,14 @@
 
 namespace app\components\map\items;
 
-use app\components\map\MapItemInterface;
 use yii\helpers\Html;
+use app\components\map\AbstractMapItem;
 
 /**
  * Class Border
  * @package app\components\map\items
  */
-class Border implements MapItemInterface
+class Border extends AbstractMapItem
 {
-    /**
-     * @return string
-     */
-    public function draw(): string
-    {
-        return Html::tag('div', '', ['class' => 'map-column map-border']);
-    }
+    protected $htmlClass = 'map-border';
 }

@@ -5,7 +5,9 @@ namespace app\controllers;
 use app\assets\TanksAsset;
 use app\components\Map;
 use app\components\map\items\Border;
+use app\components\map\items\Bullet;
 use app\components\map\items\Road;
+use app\components\map\items\Tank;
 use app\components\map\items\WoodBlock;
 use yii\web\Controller;
 
@@ -17,6 +19,12 @@ class SiteController extends Controller
 {
     public function actionIndex()
     {
+        $tankContainer = new Road();
+        $tankContainer->setPayload(new Tank());
+
+        $bulletContainer = new Road();
+        $bulletContainer->setPayload(new Bullet());
+
         $map = new Map();
         $map
             ->setItem(0, 0, (new Border()))
@@ -26,7 +34,7 @@ class SiteController extends Controller
             ->setItem(0, 4, (new Border()))
 
             ->setItem(1, 0, (new Border()))
-            ->setItem(1, 1, (new Road()))
+            ->setItem(1, 1, $bulletContainer)
             ->setItem(1, 2, (new Road()))
             ->setItem(1, 3, (new Road()))
             ->setItem(1, 4, (new Border()))
@@ -38,7 +46,7 @@ class SiteController extends Controller
             ->setItem(2, 4, (new Border()))
 
             ->setItem(3, 0, (new Border()))
-            ->setItem(3, 1, (new Road()))
+            ->setItem(3, 1, $tankContainer)
             ->setItem(3, 2, (new Road()))
             ->setItem(3, 3, (new Road()))
             ->setItem(3, 4, (new Border()))

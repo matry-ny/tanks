@@ -3,21 +3,13 @@
 namespace app\components\map\items;
 
 use yii\helpers\Html;
-use app\components\map\MapItemInterface;
+use app\components\map\AbstractMapItem;
 
 /**
  * Class WoodBlock
  * @package app\components\map\items
  */
-class WoodBlock implements MapItemInterface
+class WoodBlock extends AbstractMapItem
 {
-    /**
-     * @return string
-     */
-    public function draw(): string
-    {
-        return Html::tag('div', '', [
-            'class' => 'map-column map-wood-block'
-        ]);
-    }
+    protected $htmlClass = 'map-wood-block';
 }

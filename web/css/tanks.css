@@ -7,11 +7,16 @@
     width: 100%;
     height: 100px;
 }
-.map-column {
+.map-item {
     height: 100px;
     width: 100px;
     display: inline-block;
     background-size: cover;
+    position: relative;
+}
+.map-item-payload {
+    position: absolute;
+    z-index: 10;
 }
 .map-border {
     background-image: url("/img/Brick-2377.jpg");
@@ -21,4 +26,34 @@
 }
 .map-wood-block {
     background-image: url("/img/yachik2.jpg");
+}
+
+/*Tank styles*/
+.tank {
+    background-image: url("/img/tank.png");
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform .05s;
+}
+
+/*Direction position rules*/
+.down {
+    transform: rotate(180deg);
+}
+
+.left {
+    transform: rotate(-90deg);
+}
+
+.right {
+    transform: rotate(90deg);
+}
+
+.bullet {
+    background-image: url("/img/bullet.png");
+    background-size: 10px 20px;
+    background-position: center;
+    position: absolute;
+    background-repeat: no-repeat;
 }

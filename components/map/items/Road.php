@@ -2,20 +2,14 @@
 
 namespace app\components\map\items;
 
-use app\components\map\MapItemInterface;
 use yii\helpers\Html;
+use app\components\map\AbstractMapItem;
 
 /**
  * Class Road
  * @package app\components\map\items
  */
-class Road implements MapItemInterface
+class Road extends AbstractMapItem
 {
-    /**
-     * @return string
-     */
-    public function draw(): string
-    {
-        return Html::tag('div', '', ['class' => 'map-column map-road']);
-    }
+    protected $htmlClass = 'map-road';
 }
