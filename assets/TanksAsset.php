@@ -22,6 +22,7 @@ class TanksAsset extends AssetBundle
      * @var array
      */
     public $js = [
+        'js/autobahn.js',
         'js/tanks.js'
     ];
 

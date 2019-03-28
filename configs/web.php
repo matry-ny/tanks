@@ -6,15 +6,6 @@ $config = [
         'request' => [
             'cookieValidationKey' => 'kw11HC14ar0Cz9A4Jl9jmNNZd6rxmdBx'
         ],
-        'log' => [
-            'traceLevel' => YII_DEBUG ? 3 : 0,
-            'targets' => [
-                [
-                    'class' => yii\log\FileTarget::class,
-                    'levels' => ['error', 'warning']
-                ]
-            ]
-        ],
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,

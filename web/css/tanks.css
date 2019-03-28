@@ -53,7 +53,7 @@
 .bullet {
     background-image: url("/img/bullet.png");
     background-size: 10px 20px;
-    background-position: center;
+    background-position: center top;
     position: absolute;
     background-repeat: no-repeat;
 }

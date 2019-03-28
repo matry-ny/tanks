@@ -1,5 +1,6 @@
 <?php
 
 return [
-    'id' => 'tanks-cli'
+    'id' => 'tanks-cli',
+    'controllerNamespace' => 'app\commands'
 ];
